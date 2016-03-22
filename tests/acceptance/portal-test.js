@@ -21,6 +21,10 @@ test('visiting /', function(assert) {
     assert.equal(find(".header").length, 1, 'Has 1 header');
     assert.equal(find(".footer").length, 1, 'Has 1 footer');
 
+    assert.equal(find("#title > span > span.title-portal").text().trim(), 
+      "example", 
+      "Shows the correct title");
+
     assert.equal(find("#examples-header").length, 1, 'Shows the example header');
     assert.equal(find("#examples-footer").length, 1, 'Shows the example footer');
   });
@@ -32,6 +36,10 @@ test('visiting /foo', function(assert) {
   andThen(function() {
     assert.equal(find(".header").length, 1, 'Has 1 header');
     assert.equal(find(".footer").length, 1, 'Has 1 footer');
+
+    assert.equal(find("#title > span > span.title-portal").text().trim(), 
+      "foo", 
+      "Shows the correct title");
 
     assert.equal(find("#foo-header").length, 1, 'Shows the foo header');
     assert.equal(find("#examples-footer").length, 1, 'Shows the example footer');
@@ -46,6 +54,10 @@ test('visiting /bar', function(assert) {
     assert.equal(find(".header").length, 1, 'Has 1 header');
     assert.equal(find(".footer").length, 1, 'Has 1 footer');
 
+    assert.equal(find("#title > span > span.title-portal").text().trim(), 
+      "bar", 
+      "Shows the correct title");
+
     assert.equal(find("#examples-header").length, 1, 'Shows the example header');
     assert.equal(find("#bar-footer").length, 1, 'Shows the bar footer');
   });
@@ -57,6 +69,10 @@ test('visiting /bar/baz', function(assert) {
   andThen(function() {
     assert.equal(find(".header").length, 1, 'Has 1 header');
     assert.equal(find(".footer").length, 1, 'Has 1 footer');
+
+    assert.equal(find("#title > span > span.title-portal").text().trim(), 
+      "baz", 
+      "Shows the correct title");
 
     assert.equal(find("#baz-header").length, 1, 'Shows the baz header');
     assert.equal(find("#baz-footer").length, 1, 'Shows the baz footer');

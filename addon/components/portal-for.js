@@ -6,12 +6,14 @@ export default Ember.Component.extend({
 
   'portal-class': null,
 
+  'portal-tag-name': 'div',
+
   portalElement() {
     const elementID = portalIdForName(this.get("name"));
     let element = document.getElementById(elementID);
 
     if (!element) {
-      element = document.createElement('div');
+      element = document.createElement(this.get('portal-tag-name'));
       element.id = elementID;
     }
 

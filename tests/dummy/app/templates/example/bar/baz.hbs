@@ -1,6 +1,10 @@
 <div class="section">
   <span class="template-name">example/bar/baz.hbs</span>
 
+  {{#portal-content for="title-append"}}
+    baz
+  {{/portal-content}}
+
   {{#portal-content for="header"}}
     <div id="baz-header" class="header">
       Baz Header - defined in example/bar/baz.hbs

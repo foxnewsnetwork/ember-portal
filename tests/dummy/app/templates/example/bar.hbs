@@ -1,6 +1,10 @@
 <div class="section">
   <span class="template-name">example/bar.hbs</span>
 
+  {{#portal-content for="title-append"}}
+    bar
+  {{/portal-content}}
+
   {{#portal-content for="footer"}}
     <div id="bar-footer" class="footer">
       Bar Footer - defined in example/bar.hbs
